@@ -25,7 +25,7 @@ export async function PUT(request: Request) {
     const body = await request.json();
     const data = await prismadb.amount.update({
       where: { amount: body.amount },
-      data: { value: body.value },
+      data: { amount: body.amount, value: body.value },
     });
     return NextResponse.json({ data });
   } catch (error) {
