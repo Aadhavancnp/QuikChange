@@ -10,10 +10,10 @@ export default function AddAmount() {
   const [modalOpen, setModalOpen] = useState(false);
   const [amount, setAmount] = useState("");
   const [value, setValue] = useState(0);
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const addAmountNo = async (amount: string, value: number) => {
-    const res = await fetch(`${apiUrl}/api/amounts`, {
+    const res = await fetch("/api/amounts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export default function AddAmount() {
   };
 
   const handleLogout = async () => {
-    await fetch(`${apiUrl}/api/admins/logout`, {
+    await fetch("/api/admins/logout", {
       method: "POST",
       body: JSON.stringify({
         key: "email",

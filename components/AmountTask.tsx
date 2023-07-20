@@ -14,10 +14,10 @@ export default function AmountTask({ amount }: Props) {
   const [openModalDelete, setOpenModalDelete] = useState(false);
   const [amountToEdit, setAmountToEdit] = useState(amount.amount);
   const [valueToEdit, setValueToEdit] = useState(amount.value);
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const editAmount = async (amount: string, value: number) => {
-    const res = await fetch(`${apiUrl}/api/amounts`, {
+    const res = await fetch("/api/amounts", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export default function AmountTask({ amount }: Props) {
   };
 
   const deleteAmount = async (amount: string) => {
-    const res = await fetch(`${apiUrl}/api/amounts`, {
+    const res = await fetch("/api/amounts", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

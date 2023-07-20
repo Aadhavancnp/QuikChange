@@ -7,8 +7,8 @@ import AmountTable from "@/components/AmountTable";
 
 async function getAmounts() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const res = await fetch(`${apiUrl}/api/amounts`, {
+    // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const res = await fetch("/api/amounts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
