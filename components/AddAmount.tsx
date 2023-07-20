@@ -10,7 +10,6 @@ export default function AddAmount() {
   const [modalOpen, setModalOpen] = useState(false);
   const [amount, setAmount] = useState("");
   const [value, setValue] = useState(0);
-  // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const addAmountNo = async (amount: string, value: number) => {
     const res = await fetch("/api/amounts", {

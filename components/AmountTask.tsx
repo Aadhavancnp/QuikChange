@@ -12,9 +12,7 @@ export default function AmountTask({ amount }: Props) {
   const router = useRouter();
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [openModalDelete, setOpenModalDelete] = useState(false);
-  const [amountToEdit, setAmountToEdit] = useState(amount.amount);
   const [valueToEdit, setValueToEdit] = useState(amount.value);
-  // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const editAmount = async (amount: string, value: number) => {
     const res = await fetch("/api/amounts", {
@@ -42,7 +40,7 @@ export default function AmountTask({ amount }: Props) {
 
   const handleSubmitEdit = async (e: any) => {
     e.preventDefault();
-    await editAmount(amountToEdit, valueToEdit);
+    await editAmount(amount.amount, valueToEdit);
     setOpenModalEdit(false);
     router.refresh();
   };
@@ -87,9 +85,8 @@ export default function AmountTask({ amount }: Props) {
                     type="text"
                     placeholder="Amount"
                     name="amount"
-                    value={amountToEdit}
-                    onChange={(e) => setAmountToEdit(e.target.value)}
-                    required
+                    readOnly
+                    value={amount.amount}
                   />
                 </div>
                 <div className="flex flex-col justify-center w-full items-start">
