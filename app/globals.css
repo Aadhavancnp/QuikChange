@@ -2,26 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("../public/assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.top-20 {
+  top: 20%;
+}
+
+.left-35 {
+  left: 35%;
+}
+
+.left-1 {
+  left: 1%;
+}
+
+.top-1 {
+  top: 1%;
+}
+
+.box-input {
+  height: 2.1em;
+  width: 2.1em;
+  font-size: xx-large !important;
+  border: 2px solid black;
+  border-left-width: 1.25px;
+  border-right-width: 1.25px;
+  text-align: center;
+  outline: none;
+  appearance: textfield;
+}
+
+.box-input-extended {
+  height: 1.85em;
+  width: 6.15em;
+  font-size: xx-large !important;
+  border: 2px solid black;
+  border-left-width: 1.25px;
+  border-right-width: 1.25px;
+  text-align: center;
+  outline: none;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }

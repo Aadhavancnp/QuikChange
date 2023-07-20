@@ -2,24 +2,37 @@
   "name": "quikchangefinal",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@3.6.1",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn pnpify prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "yarn pnpify prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^5.0.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
+    "cookies-next": "^2.1.2",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "next": "13.4.10",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
+    "sharp": "^0.32.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
+    "@yarnpkg/pnpify": "^4.0.0-rc.48",
+    "daisyui": "^3.2.1",
+    "prisma": "^5.0.0"
   }
 }
