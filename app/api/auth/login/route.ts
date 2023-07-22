@@ -4,6 +4,7 @@ import prismadb from "@/lib/prisma";
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
   try {
+    
     const user = await prismadb.admin.findFirstOrThrow({
       where: { email, password },
     });
